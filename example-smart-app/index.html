@@ -24,90 +24,98 @@
           <td class="headRow"><img src='./src/images/logo-us.png'></td>
         </tr>
         <tr>
-          <td class="centerByMargin">BluPanda Sepsis SMART App</td>
-        </tr>
-        <tr>
           <td class="centerByMargin">
 
-              <table class="pandatbl">
-                  <tr>
-                    <td colspan="2" class="tblhead">Patient Resource</td>
-                  </tr>
-                  <tr>
-                    <td class="lblcell">First Name:</td>
-                    <td id='fname' class="valcell"></td>
-                  </tr>
-                  <tr>
-                    <td class="lblcell">Last Name:</td>
-                    <td id='lname' class="valcell"></td>
-                  </tr>
-                  <tr>
-                    <td class="lblcell">Gender:</td>
-                    <td id='gender' class="valcell"></td>
-                  </tr>
-                  <tr>
-                    <td class="lblcell">Date of Birth:</td>
-                    <td id='birthdate' class="valcell"></td>
-                  </tr>
-                  <tr>
-                    <td class="lblcell">Age:</td>
-                    <td id='age' class="valcell"></td>
-                  </tr>
-                </table>
-
-                <P><BR>
-          
-          
-                <table class="pandatbl">
-                    <tr>
-                      <td colspan="2" class="tblhead">Sepsis NEWS Data Set</td>
-                    </tr>
-                    <tr>
-                      <td class="lblcell">Temp:</td>
-                      <td id='temp' class="valcell"></td>
-                    </tr>
-                    <tr>
-                      <td class="lblcell">Heart Rate:</td>
-                      <td id='heartrate' class="valcell"></td>
-                    </tr>
-                    <tr>
-                      <td class="lblcell">Respiration Rate:</td>
-                      <td id='resprate' class="valcell"></td>
-                    </tr>
-                    <tr>
-                      <td class="lblcell">Systolic Blood Pressure:</td>
-                      <td id='systolicbp' class="valcell"></td>
-                    </tr>
-                    <tr>
-                      <td class="lblcell">O2 Saturation:</td>
-                      <td id='o2sat' class="valcell"></td>
-                    </tr>
-                    <tr>
-                      <td class="lblcell">On Supplemental O2:</td>
-                      <td id='onsupo2' class="valcell"></td>
-                    </tr>
-                    <tr>
-                      <td class="lblcell">LOC:</td>
-                      <td id='loc' class="valcell"></td>
-                    </tr>
-                </table>
-
-
-                <P><BR>
-                  
-                  <table class="pandatbl">
-                      <tr>
-                        <td colspan="2" class="tblhead">Sepsis NEWS Score</td>
-                      </tr>
-                      <tr>
-                        <td class="lblcell">Response:</td>
-                        <td id='sepresp' class="valcell"></td>
-                      </tr>
-                      <tr>
-                        <td class="lblcell">Score:</td>
-                        <td id='sepscore' class="valcell"></td>
-                      </tr>
-                  </table>
+            <table class="mainTbl">
+              <tr>
+                <td>
+                    <table class="pandatbl">
+                        <tr>
+                          <td colspan="2" class="tblhead">Patient Resource</td>
+                        </tr>
+                        <tr>
+                          <td class="lblcell">First Name:</td>
+                          <td id='fname' class="valcell"></td>
+                        </tr>
+                        <tr>
+                          <td class="lblcell">Last Name:</td>
+                          <td id='lname' class="valcell"></td>
+                        </tr>
+                        <tr>
+                          <td class="lblcell">Gender:</td>
+                          <td id='gender' class="valcell"></td>
+                        </tr>
+                        <tr>
+                          <td class="lblcell">Date of Birth:</td>
+                          <td id='birthdate' class="valcell"></td>
+                        </tr>
+                        <tr>
+                          <td class="lblcell">Age:</td>
+                          <td id='age' class="valcell"></td>
+                        </tr>
+                      </table></td>
+                <td>
+                    <table class="pandatbl">
+                        <tr>
+                          <td class="valcell">The BluPanda Sepsis SMART App queries the database for vitals inputs and attemtps to generate a NEWS score.
+                            <P>As new data arrives and is processed, patients are assigned a NEWS value and clinical risk level. The system tracks the change in the clinical risk as the trigger on whether or not to notify connected devices of Sepsis events.</P>
+                          </td>
+                        </tr>
+                    </table>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <table class="pandatbl">
+                        <tr>
+                          <td colspan="2" class="tblhead">Sepsis NEWS Data Set</td>
+                        </tr>
+                        <tr>
+                          <td class="lblcell">Temp:</td>
+                          <td id='temp' class="valcell"></td>
+                        </tr>
+                        <tr>
+                          <td class="lblcell">Heart Rate:</td>
+                          <td id='heartrate' class="valcell"></td>
+                        </tr>
+                        <tr>
+                          <td class="lblcell">Respiration Rate:</td>
+                          <td id='resprate' class="valcell"></td>
+                        </tr>
+                        <tr>
+                          <td class="lblcell">Systolic Blood Pressure:</td>
+                          <td id='systolicbp' class="valcell"></td>
+                        </tr>
+                        <tr>
+                          <td class="lblcell">O2 Saturation:</td>
+                          <td id='o2sat' class="valcell"></td>
+                        </tr>
+                        <tr>
+                          <td class="lblcell">On Supplemental O2:</td>
+                          <td id='onsupo2' class="valcell"></td>
+                        </tr>
+                        <tr>
+                          <td class="lblcell">LOC:</td>
+                          <td id='loc' class="valcell"></td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table class="pandatbl">
+                        <tr>
+                          <td colspan="2" class="tblhead">Sepsis NEWS Score</td>
+                        </tr>
+                        <tr>
+                          <td class="lblcell">Response:</td>
+                          <td id='sepresp' class="valcell"></td>
+                        </tr>
+                        <tr>
+                          <td class="lblcell">Score:</td>
+                          <td id='sepscore' class="valcell"></td>
+                        </tr>
+                    </table></td>
+              </tr>
+            </table>
 
           </td>
         </tr>
