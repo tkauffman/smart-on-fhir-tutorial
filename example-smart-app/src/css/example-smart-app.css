@@ -54,7 +54,7 @@ body {
 
 .lblcell{
   text-align: right;
-  width: 200px;
+  width: 150px;
   border: 1px solid #000;
   color: white;
   background-color: lightslategray;
@@ -62,7 +62,7 @@ body {
 
 .valcell{
   text-align: left;
-  width: 100px;
+  width: 150px;
   border: 1px solid #000;
   background-color: #FFF;
 }
