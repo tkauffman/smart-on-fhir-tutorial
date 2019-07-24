@@ -5,18 +5,30 @@ th, td {
 
 body {
   margin: 0;
-  background: rgb(13, 90, 204);
+  background: #0099ff;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 0.9em;
+}
+
+.pandatbl{
+  width: 300;
+  border: 1px solid #000;
+  margin: 0 auto;
+}
+
+.tblhead{
+  font-size: 1.1em;
+  text-align: center;
+  background-color: rgb(1, 87, 136)
 }
 
 .lblcell{
-  font-size: 1.0em;
   text-align: right;
   background-color: lightslategray;
   width: 150;
 }
 
 .valcell{
-  font-size: 1.0em;
   text-align: left;
   width: 100;
 }
