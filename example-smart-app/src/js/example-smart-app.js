@@ -7,6 +7,22 @@
       ret.reject();
     }
 
+    // LOINC
+    // 18686-6  Respiration Rate
+    // 59408-5  O2 Sat
+    // 88658-0  Supp O2
+    // 8310-5   Temp
+    // 8480-6   SYS BP
+    // 8867-4   Heart Rate
+    // 80288-4  LOC
+
+
+    // 8302-2   HEIGHT
+    // 8462-4   DIA BP
+    // 2085-9   Cholesterol in HDL [Mass/​volume] in Serum or Plasma
+    // 2089-1   Cholesterol in LDL [Mass/​volume] in Serum or Plasma
+    // 55284-4  Blood pressure systolic and diastolic
+
     function onReady(smart)  {
       if (smart.hasOwnProperty('patient')) {
         var patient = smart.patient;
@@ -17,7 +33,10 @@
                       code: {
                         $or: ['http://loinc.org|8302-2', 'http://loinc.org|8462-4',
                               'http://loinc.org|8480-6', 'http://loinc.org|2085-9',
-                              'http://loinc.org|2089-1', 'http://loinc.org|55284-4']
+                              'http://loinc.org|2089-1', 'http://loinc.org|55284-4',
+                              'http://loinc.org|18686-6', 'http://loinc.org|59408-5',
+                              'http://loinc.org|88658-0', 'http://loinc.org|8310-5',
+                              'http://loinc.org|8867-4', 'http://loinc.org|80288-4']
                       }
                     }
                   });
@@ -47,6 +66,9 @@
           var hdl = byCodes('2085-9');
           var ldl = byCodes('2089-1');
 
+          var temp = byCodes('8310-5');
+          var heartRate = byCodes('8867-4');
+
           var p = defaultPatient();
           p.birthdate = dobStr;
           p.gender = gender;
@@ -63,8 +85,10 @@
             p.diastolicbp = diastolicbp;
           }
 
-          p.hdl = getQuantityValueAndUnit(hdl[0]);
-          p.ldl = getQuantityValueAndUnit(ldl[0]);
+          //p.hdl = getQuantityValueAndUnit(hdl[0]);
+          //p.ldl = getQuantityValueAndUnit(ldl[0]);
+          p.hdl = getQuantityValueAndUnit(temp[0]);
+          p.ldl = getQuantityValueAndUnit(heartRate[0]);
 
           ret.resolve(p);
         });
