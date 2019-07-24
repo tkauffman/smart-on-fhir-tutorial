@@ -198,6 +198,9 @@
     $('#onsupo2').html(p.onSupO2);
     $('#loc').html(p.loc);
 
+    $('#sepresp').html("Incomplete Data Set");
+    $('#sepscore').html("");
+
     // $('#height').html(p.height);
     // $('#diastolicbp').html(p.diastolicbp);
     // $('#ldl').html(p.ldl);

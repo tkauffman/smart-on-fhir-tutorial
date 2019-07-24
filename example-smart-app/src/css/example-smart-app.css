@@ -16,7 +16,7 @@ body {
 }
 
 .pandatbl{
-  width: 400;
+  width: 400px;
   border-spacing: 0;
   border-collapse: collapse;
   border: 1px solid #000;
@@ -32,15 +32,16 @@ body {
 
 .lblcell{
   text-align: right;
-  background-color: lightslategray;
-  width: 150;
+  width: 150px;
   border: 1px solid #000;
+  background-color: lightslategray;
 }
 
 .valcell{
   text-align: left;
-  width: 250;
+  width: 250px;
   border: 1px solid #000;
+  background-color: #FFF;
 }
 
 #holder {
