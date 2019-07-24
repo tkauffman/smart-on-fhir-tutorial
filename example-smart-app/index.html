@@ -28,7 +28,7 @@
 
             <table class="centerByMargin">
               <tr>
-                <td>
+                <td style="text-align: right">
                     <table class="pandatbl">
                         <tr>
                           <td colspan="2" class="tblhead">Patient Resource</td>
@@ -53,11 +53,12 @@
                           <td class="lblcell">Age:</td>
                           <td id='age' class="valcell"></td>
                         </tr>
-                      </table></td>
-                <td>
+                      </table>
+                </td>
+                <td style="text-align: left">
                     <table class="pandatbl">
                         <tr>
-                          <td class="valcell">The BluPanda Sepsis SMART App queries the database for vitals inputs and attemtps to generate a NEWS score.
+                          <td class="valcell">This BluPanda Sepsis SMART App queries the Cerner FHIR API for vitals inputs and attemtps to generate a NEWS score.
                             <P>As new data arrives and is processed, patients are assigned a NEWS value and clinical risk level. The system tracks the change in the clinical risk as the trigger on whether or not to notify connected devices of Sepsis events.</P>
                           </td>
                         </tr>
