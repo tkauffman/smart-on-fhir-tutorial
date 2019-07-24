@@ -12,6 +12,7 @@ body {
 
 .centerByMargin{
   margin: 0 auto;
+  text-align: center;
 }
 
 .pandatbl{
@@ -20,8 +21,10 @@ body {
 }
 
 .tblhead{
-  font-size: 1.1em;
+  font-size: 1.2em;
+  font-weight: 600;
   text-align: center;
+  color: white;
   background-color: rgb(1, 87, 136)
 }
 
@@ -29,11 +32,13 @@ body {
   text-align: right;
   background-color: lightslategray;
   width: 150;
+  border: 1px solid #000;
 }
 
 .valcell{
   text-align: left;
   width: 100;
+  border: 1px solid #000;
 }
 
 #holder {
