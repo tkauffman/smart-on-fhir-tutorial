@@ -8,6 +8,19 @@ body {
   background: rgb(13, 90, 204);
 }
 
+.lblcell{
+  font-size: 1.0em;
+  text-align: right;
+  background-color: lightslategray;
+  width: 150;
+}
+
+.valcell{
+  font-size: 1.0em;
+  text-align: left;
+  width: 100;
+}
+
 #holder {
   display: none;
 }
