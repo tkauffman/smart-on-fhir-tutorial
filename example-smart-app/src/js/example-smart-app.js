@@ -66,8 +66,12 @@
           var hdl = byCodes('2085-9');
           var ldl = byCodes('2089-1');
 
-          var temp = byCodes('8310-5');
-          var heartRate = byCodes('8867-4');
+          var vtemp = byCodes('8310-5');
+          var vheartRate = byCodes('8867-4');
+          var vrespRate = byCodes('18686-6');
+          var vosSat = byCodes('59408-5');
+          var vonSupO2 = byCodes('88658-0');
+          var vloc = byCodes('80288-4');
 
           var p = defaultPatient();
           p.birthdate = dobStr;
@@ -87,8 +91,13 @@
 
           //p.hdl = getQuantityValueAndUnit(hdl[0]);
           //p.ldl = getQuantityValueAndUnit(ldl[0]);
-          p.hdl = getQuantityValueAndUnit(temp[0]);
-          p.ldl = getQuantityValueAndUnit(heartRate[0]);
+          
+          p.temp = getQuantityValueAndUnit(vtemp[0]);
+          p.heartrate = getQuantityValueAndUnit(vheartRate[0]);
+          p.resprate = getQuantityValueAndUnit(vrespRate[0]);
+          p.o2Sat = getQuantityValueAndUnit(vosSat[0]);
+          p.onSupO2 = getQuantityValueAndUnit(vonSupO2[0]);
+          p.loc = getQuantityValueAndUnit(vloc[0]);
 
           ret.resolve(p);
         });
@@ -114,6 +123,12 @@
       diastolicbp: {value: ''},
       ldl: {value: ''},
       hdl: {value: ''},
+      heartrate: {value: ''},
+      temp: {value: ''},
+      resprate: {value: ''},
+      o2Sat: {value: ''},
+      onSupO2: {value: ''},
+      loc: {value: ''},
     };
   }
 
@@ -174,11 +189,19 @@
     $('#gender').html(p.gender);
     $('#birthdate').html(p.birthdate);
     $('#age').html(p.age);
-    $('#height').html(p.height);
+
+    $('#temp').html(p.temp);
+    $('#heartrate').html(p.heartrate);
+    $('#resprate').html(p.resprate);
     $('#systolicbp').html(p.systolicbp);
-    $('#diastolicbp').html(p.diastolicbp);
-    $('#ldl').html(p.ldl);
-    $('#hdl').html(p.hdl);
+    $('#o2sat').html(p.o2Sat);
+    $('#onsupo2').html(p.onSupO2);
+    $('#loc').html(p.loc);
+
+    // $('#height').html(p.height);
+    // $('#diastolicbp').html(p.diastolicbp);
+    // $('#ldl').html(p.ldl);
+    // $('#hdl').html(p.hdl);
   };
 
 })(window);
