@@ -10,15 +10,23 @@ body {
   font-size: 0.9em;
 }
 
+.headTbl{
+  width: 100%;
+  text-align: center;
+  border-spacing: 0;
+  border-collapse: collapse;
+  border: 0px;
+}
+
+.headRow{
+  width: 100%;
+  text-align: center;
+  background-color: #FFF;
+}
+
 .centerByMargin{
   margin: 0 auto;
   text-align: center;
-}
-
-.centerByMarginWhite{
-  margin: 0 auto;
-  text-align: center;
-  background-color: #FFF;
 }
 
 .pandatbl{
