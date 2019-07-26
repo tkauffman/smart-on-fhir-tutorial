@@ -27,7 +27,7 @@ class BluPandaAPI
 
         request.send();
 
-        if (!error & response.statusCode === 200){
+        if (response.statusCode === 200){
             return (JSON.parse(body).results)
         }else{
             return 'Error';
