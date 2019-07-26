@@ -173,17 +173,27 @@
 
           const pingUrl = 'https://irmcv4.blupanda.com/PandaAPI.svc/API/PING';
 
-          $.ajax({
-            url:pingUrl,
-            headers: { 'Access-Control-Allow-Origin': '*' },
-            type:"GET",
-            success: function(result){
-              console.log(result)
-            },
-            error: function(error){
-              console.log(error)
-            }
-          })
+          var request = new XMLHttpRequest();
+          request.open('GET', pingUrl);
+          request.responseType = 'json';
+
+          request.onload = function(){
+            console.log(request.response)
+          }
+
+          request.send();
+
+          // $.ajax({
+          //   url:pingUrl,
+          //   headers: { 'Access-Control-Allow-Origin': '*' },
+          //   type:"GET",
+          //   success: function(result){
+          //     console.log(result)
+          //   },
+          //   error: function(error){
+          //     console.log(error)
+          //   }
+          // })
 
           drawVisualization(p);
         },
