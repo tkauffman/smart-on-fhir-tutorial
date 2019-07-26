@@ -17,21 +17,42 @@ class BluPandaAPI
 
         console.log(api_url);
 
-        var request = new XMLHttpRequest();
-        request.open('GET', api_url);
-        request.responseType = 'json';
+        var xhr = new XMLHttpRequest();
+        xhr.responseType = 'json';
 
-        request.onload = function(){
-          console.log(request.response)
+        xhr.onreadystatechange = function(){
+            if (xhr.readyState == XMLHttpRequest.DONE){
+                console.log(xhr.response)
+            }
         }
 
-        request.send();
+        xhr.open('GET', api_url);
 
-        if (response.statusCode === 200){
-            return (JSON.parse(body).results)
-        }else{
-            return 'Error';
-        }
+        // request.onload = function(){
+        //   console.log(request.response)
+        // }
+
+        xhr.send();
+
+        // if (response.statusCode === 200){
+        //     return (JSON.parse(body).results)
+        // }else{
+        //     return 'Error';
+        // }
+
+        // function load(url, callback) {
+        //     var xhr = new XMLHttpRequest();
+          
+        //     xhr.onreadystatechange = function() {
+        //       if (xhr.readyState === 4) {
+        //         callback(xhr.response);
+        //       }
+        //     }
+          
+        //     xhr.open('GET', url, true);
+        //     xhr.send('');
+        //   }
+
         //this._sendRequest("SEPSISSCORE", callback)
         // const api_url = '${base_url}/${api_key/SEPSISSCORE}';
 
