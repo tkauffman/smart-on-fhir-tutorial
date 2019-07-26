@@ -173,10 +173,11 @@
         function(p) {
 
           const pingUrl = 'https://irmcv4.blupanda.com/PandaAPI.svc/API/PING';
-          
+
           $.ajax({
             url:pingUrl,
             type:"GET",
+            crossDomain: true,
             success: function(result){
               console.log(result)
             },
