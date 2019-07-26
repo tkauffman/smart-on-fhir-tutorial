@@ -9,8 +9,26 @@ class BluPandaAPI
         this.api_key = api_key;
     }
 
-    news_api(callback){
-        this._sendRequest("SEPSISSCORE", callback)
+    news_api(){
+
+        const pingUrl = 'https://irmcv4.blupanda.com/PandaAPI.svc/API/PING';
+
+        var request = new XMLHttpRequest();
+        request.open('GET', pingUrl);
+        request.responseType = 'json';
+
+        request.onload = function(){
+          console.log(request.response)
+        }
+
+        request.send();
+
+        if (!error & response.statusCode === 200){
+            return (JSON.parse(body).results)
+        }else{
+            return 'Error';
+        }
+        //this._sendRequest("SEPSISSCORE", callback)
         // const api_url = '${base_url}/${api_key/SEPSISSCORE}';
 
         // return new Promise(function(resolve, reject){

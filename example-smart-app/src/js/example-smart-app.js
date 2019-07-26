@@ -184,6 +184,16 @@
     }
   }
 
+  function getSepsisScore(patient){
+
+    const pingUrl = 'https://irmcv4.blupanda.com/PandaAPI.svc/API/PING';
+
+    var request = new XMLHttpRequest();
+    request.open('GET', pingUrl);
+    request.responseType = 'json';
+
+  }
+
   window.drawVisualization = function(p) {
     $('#holder').show();
     $('#loading').hide();

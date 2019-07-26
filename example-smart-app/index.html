@@ -173,15 +173,19 @@
 
           const pingUrl = 'https://irmcv4.blupanda.com/PandaAPI.svc/API/PING';
 
-          var request = new XMLHttpRequest();
-          request.open('GET', pingUrl);
-          request.responseType = 'json';
+          var bpAPI = new BluPandaAPI('d57a553b4bfd8a18b8d1afbaaed5bf56d26b684c0c5d205c8138609d5c9e51a6');
+          var news = bpAPI.news_api();
+          console.log(news);
 
-          request.onload = function(){
-            console.log(request.response)
-          }
+          // var request = new XMLHttpRequest();
+          // request.open('GET', pingUrl);
+          // request.responseType = 'json';
 
-          request.send();
+          // request.onload = function(){
+          //   console.log(request.response)
+          // }
+
+          // request.send();
 
           // $.ajax({
           //   url:pingUrl,
