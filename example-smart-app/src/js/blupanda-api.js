@@ -18,7 +18,7 @@ class BluPandaAPI
         console.log(api_url);
 
         var request = new XMLHttpRequest();
-        request.open('GET', pingUrl);
+        request.open('GET', api_url);
         request.responseType = 'json';
 
         request.onload = function(){
