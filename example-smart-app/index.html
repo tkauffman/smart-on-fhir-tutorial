@@ -176,8 +176,8 @@
 
           $.ajax({
             url:pingUrl,
+            headers: { 'Access-Control-Allow-Origin': '*' },
             type:"GET",
-            crossDomain: true,
             success: function(result){
               console.log(result)
             },
