@@ -1,6 +1,6 @@
-import request from 'request';
-const base_url = 'https://irmcv4.blupanda.com/PandaAPI.svc/API/';
-const api_key = 'd57a553b4bfd8a18b8d1afbaaed5bf56d26b684c0c5d205c8138609d5c9e51a6';
+// import request from 'request';
+// const base_url = 'https://irmcv4.blupanda.com/PandaAPI.svc/API/';
+// const api_key = 'd57a553b4bfd8a18b8d1afbaaed5bf56d26b684c0c5d205c8138609d5c9e51a6';
     
 class BluPandaAPI
 {
