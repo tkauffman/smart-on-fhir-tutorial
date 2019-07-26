@@ -129,6 +129,9 @@
       o2Sat: {value: ''},
       onSupO2: {value: ''},
       loc: {value: ''},
+      sepscore: {value: ''},
+      sepalgo: {value: ''},
+      sepresponse: {value: ''},
     };
   }
 
@@ -198,8 +201,8 @@
     $('#onsupo2').html(p.onSupO2);
     $('#loc').html(p.loc);
 
-    $('#sepresp').html("Incomplete Data Set");
-    $('#sepscore').html("");
+    $('#sepresp').html(p.sepresponse);
+    $('#sepscore').html(p.sepscore);
 
     // $('#height').html(p.height);
     // $('#diastolicbp').html(p.diastolicbp);
