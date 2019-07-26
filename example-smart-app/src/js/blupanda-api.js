@@ -6,12 +6,16 @@ class BluPandaAPI
 {
     constructor(api_key){
         //this.http = http;
+        this.panda_api_url = 'https://irmcv4.blupanda.com/PandaAPI.svc/API/'
         this.api_key = api_key;
     }
 
     news_api(){
 
-        const pingUrl = 'https://irmcv4.blupanda.com/PandaAPI.svc/API/PING';
+        //const newsURL = 'https://irmcv4.blupanda.com/PandaAPI.svc/API/PING';
+        const api_url = '${panda_api_url}/${api_key/SEPSISSCORE}';
+
+        console.log(api_url);
 
         var request = new XMLHttpRequest();
         request.open('GET', pingUrl);
