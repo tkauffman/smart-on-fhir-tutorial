@@ -175,33 +175,15 @@
 
           var bpAPI = new BluPandaAPI('d57a553b4bfd8a18b8d1afbaaed5bf56d26b684c0c5d205c8138609d5c9e51a6');
 
-          var news = bpAPI.news_api();
-          console.log(news);
+          var avail = bpAPI.is_panda_API_available();
 
-          var newsScore = bpAPI.generate_news_score();
-          console.log(newsScore);
+          console.log('Is BluPandaAPI available? ' + (avail));
 
-          // var request = new XMLHttpRequest();
-          // request.open('GET', pingUrl);
-          // request.responseType = 'json';
-
-          // request.onload = function(){
-          //   console.log(request.response)
-          // }
-
-          // request.send();
-
-          // $.ajax({
-          //   url:pingUrl,
-          //   headers: { 'Access-Control-Allow-Origin': '*' },
-          //   type:"GET",
-          //   success: function(result){
-          //     console.log(result)
-          //   },
-          //   error: function(error){
-          //     console.log(error)
-          //   }
-          // })
+          if (true == avail)
+          {
+            var newsScore = bpAPI.generate_news_score();
+            console.log(newsScore);
+          }
 
           drawVisualization(p);
         },

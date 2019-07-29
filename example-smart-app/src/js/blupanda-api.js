@@ -10,15 +10,35 @@ class BluPandaAPI
         this.api_key = api_key;
     }
 
-    is_panda_API_available(pingURL, callback) {
-        _sendRequest(pingURL, callback);
+    is_panda_API_available(pingURL) {
+        request(pingURL, function(error, response, body){
+            if (!error & response.statusCode === 200){
+                //callback(JSON.parse(body).results)
+                return true;
+            }
+            else {
+                return false;
+            }
+        })
     }
 
     generate_news_score(){
         let subPack = this.create_sepsis_sub_pack();
 
+        var xhr = new XMLHttpRequest();
+        xhr.responseType = 'json';
+        xhr.open('GET', "https://irmcv4.blupanda.com/PandaAPI.svc/API/PING", true);
+        xhr.send();
+         
+        xhr.addEventListener("readystatechange", processNEWSResponse, false);
+
         return subPack;
         // https://irmcv4.blupanda.com/PandaAPI.svc/API/d57a553b4bfd8a18b8d1afbaaed5bf56d26b684c0c5d205c8138609d5c9e51a6/SEPSISSCORE
+    }
+
+    processNEWSResponse(e) {
+ 
+        console.log('Received ' + e.readyState);
     }
 
     news_api(){
