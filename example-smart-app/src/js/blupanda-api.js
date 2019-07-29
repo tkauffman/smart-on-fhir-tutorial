@@ -17,9 +17,12 @@ class BluPandaAPI
         xhr.onreadystatechange = function(){
             if (xhr.readyState == XMLHttpRequest.DONE){
                 console.log(xhr.response);
-                if (1000 == xhr.Code)
+                if (200 == xhr.status)
                 {
-                    console.log('true');
+                    if (1000 == xhr.response.Code)
+                    {
+                        console.log('true');
+                    }
                 }
             }
         }
