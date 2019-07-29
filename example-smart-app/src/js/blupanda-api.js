@@ -10,6 +10,13 @@ class BluPandaAPI
         this.api_key = api_key;
     }
 
+    generate_news_score(){
+        let subPack = this.create_sepsis_sub_pack();
+
+        return subPack;
+        // https://irmcv4.blupanda.com/PandaAPI.svc/API/d57a553b4bfd8a18b8d1afbaaed5bf56d26b684c0c5d205c8138609d5c9e51a6/SEPSISSCORE
+    }
+
     news_api(){
 
         const rootURL = 'https://irmcv4.blupanda.com/PandaAPI.svc/API/PING';
@@ -66,7 +73,7 @@ class BluPandaAPI
     }
 
     _sendRequest(type, callback){
-        const api_url = '${base_url}/${api_key/${type}';
+        const api_url = '${base_url}/${api_key}/${type}';
 
         request(api_url, function(error, response, body){
             if (!error & response.statusCode === 200){
@@ -75,16 +82,22 @@ class BluPandaAPI
         })
     }
 
-    // {
-    //     "SUBTYPE": "SEPSISPACK",
-    //     "PVID": 0,
-    //     "TEMP": 98.6,
-    //     "HRATE": 80,
-    //     "RRATE": 20,
-    //     "SYSBP": 110,
-    //     "OnSupO2": "Room Air",
-    //     "O2SAT": 97,
-    //     "LOC": "Alert and Oriented",
-    //     "DT": "2019-07-24T15:26:03"
-    // }
+    create_sepsis_sub_pack(){
+        var pack = `
+            {
+                "SUBTYPE": "SEPSISPACK",
+                "PVID": 0,
+                "TEMP": 98.6,
+                "HRATE": 80,
+                "RRATE": 20,
+                "SYSBP": 110,
+                "OnSupO2": "RoomAir",
+                "O2SAT": 97,
+                "LOC": "Alert and Oriented",
+                "DT": "2019-07-29T154:00:00"
+            }`;
+            return pack;
+    }
+
+
 }

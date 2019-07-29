@@ -174,8 +174,12 @@
           const pingUrl = 'https://irmcv4.blupanda.com/PandaAPI.svc/API/PING';
 
           var bpAPI = new BluPandaAPI('d57a553b4bfd8a18b8d1afbaaed5bf56d26b684c0c5d205c8138609d5c9e51a6');
+
           var news = bpAPI.news_api();
           console.log(news);
+
+          var newsScore = bpAPI.generate_news_score();
+          console.log(newsScore);
 
           // var request = new XMLHttpRequest();
           // request.open('GET', pingUrl);
