@@ -11,15 +11,15 @@ class BluPandaAPI
     }
 
     is_panda_API_available() {
-        request("https://irmcv4.blupanda.com/PandaAPI.svc/API/PING", function(error, response, body){
-            if (!error & response.statusCode === 200){
-                callback(JSON.parse(body).results)
-                return true;
+        var xhr = new XMLHttpRequest();
+        xhr.responseType = 'json';
+        xhr.open('GET', "https://irmcv4.blupanda.com/PandaAPI.svc/API/PING", true);        
+        xhr.onreadystatechange = function(){
+            if (xhr.readyState == XMLHttpRequest.DONE){
+                console.log(xhr.response)
             }
-            else {
-                return false;
-            }
-        })
+        }
+        xhr.send();
     }
 
     generate_news_score(){
@@ -28,9 +28,12 @@ class BluPandaAPI
         var xhr = new XMLHttpRequest();
         xhr.responseType = 'json';
         xhr.open('GET', "https://irmcv4.blupanda.com/PandaAPI.svc/API/PING", true);
+        xhr.onreadystatechange = function(){
+            if (xhr.readyState == XMLHttpRequest.DONE){
+                console.log(xhr.response)
+            }
+        }
         xhr.send();
-         
-        xhr.addEventListener("readystatechange", processNEWSResponse, false);
 
         return subPack;
         // https://irmcv4.blupanda.com/PandaAPI.svc/API/d57a553b4bfd8a18b8d1afbaaed5bf56d26b684c0c5d205c8138609d5c9e51a6/SEPSISSCORE
