@@ -21,42 +21,45 @@ class BluPandaAPI
                 {
                     if (1000 == xhr.response.Code)
                     {
-                        console.log('true');
+                        return true;
                     }
                 }
             }
         }
         xhr.send();
+
+        return false;
     }
 
     generate_news_score(){
+        const api_url = `${rootURL}/${apiKey}/SEPSISSCORE`;
+
         let subPack = this.create_sepsis_sub_pack();
 
-        var xhr = new XMLHttpRequest();
-        xhr.responseType = 'json';
-        xhr.open('GET', "https://irmcv4.blupanda.com/PandaAPI.svc/API/PING", true);
-        xhr.onreadystatechange = function(){
-            if (xhr.readyState == XMLHttpRequest.DONE){
-                console.log(xhr.response)
-            }
-        }
-        xhr.send();
+        var data = JSON.stringify({"SUBTYPE": subPack.SUBTYPE, "PVID": subPack.PVID});
+
+        console.log(data)
+
+        // var xhr = new XMLHttpRequest();
+        // xhr.responseType = 'json';
+        // xhr.open('POST', "https://irmcv4.blupanda.com/PandaAPI.svc/API/PING", true);
+        // xhr.onreadystatechange = function(){
+        //     if (xhr.readyState == XMLHttpRequest.DONE){
+        //         console.log(xhr.response)
+        //     }
+        // }
+        // xhr.send();
 
         return subPack;
         // https://irmcv4.blupanda.com/PandaAPI.svc/API/d57a553b4bfd8a18b8d1afbaaed5bf56d26b684c0c5d205c8138609d5c9e51a6/SEPSISSCORE
     }
 
-    processNEWSResponse(e) {
- 
-        console.log('Received ' + e.readyState);
-    }
 
     news_api(){
 
         const rootURL = 'https://irmcv4.blupanda.com/PandaAPI.svc/API/PING';
         const apiKey = this.api_key;
 
-        //const api_url = `${rootURL}/${apiKey}/SEPSISSCORE`;
         const api_url = `${rootURL}`;
 
         console.log(api_url);
