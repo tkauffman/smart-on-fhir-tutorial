@@ -16,7 +16,11 @@ class BluPandaAPI
         xhr.open('GET', "https://irmcv4.blupanda.com/PandaAPI.svc/API/PING", true);        
         xhr.onreadystatechange = function(){
             if (xhr.readyState == XMLHttpRequest.DONE){
-                console.log(xhr.response)
+                console.log(xhr.response);
+                if (1000 == xhr.Code)
+                {
+                    console.log('true');
+                }
             }
         }
         xhr.send();
