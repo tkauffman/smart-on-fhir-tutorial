@@ -14,7 +14,9 @@ class BluPandaAPI
 
         const rootURL = 'https://irmcv4.blupanda.com/PandaAPI.svc/API/PING';
         const apiKey = this.api_key;
-        const api_url = `${rootURL}/${apiKey}/SEPSISSCORE`;
+
+        //const api_url = `${rootURL}/${apiKey}/SEPSISSCORE`;
+        const api_url = `${rootURL}`;
 
         console.log(api_url);
 
