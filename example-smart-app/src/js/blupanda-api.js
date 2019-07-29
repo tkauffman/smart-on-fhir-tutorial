@@ -10,8 +10,8 @@ class BluPandaAPI
         this.api_key = api_key;
     }
 
-    is_panda_API_available(pingURL) {
-        request(pingURL, function(error, response, body){
+    is_panda_API_available() {
+        request("https://irmcv4.blupanda.com/PandaAPI.svc/API/PING", function(error, response, body){
             if (!error & response.statusCode === 200){
                 callback(JSON.parse(body).results)
                 return true;
