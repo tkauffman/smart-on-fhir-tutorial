@@ -13,7 +13,7 @@ class BluPandaAPI
     news_api(){
 
         //const newsURL = 'https://irmcv4.blupanda.com/PandaAPI.svc/API/PING';
-        const api_url = '${panda_api_url}/${api_key}/SEPSISSCORE';
+        const api_url = `${panda_api_url}/${api_key}/SEPSISSCORE`;
 
         console.log(api_url);
 
