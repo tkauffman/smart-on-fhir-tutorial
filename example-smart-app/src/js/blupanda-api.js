@@ -10,6 +10,10 @@ class BluPandaAPI
         this.api_key = api_key;
     }
 
+    is_panda_API_available(pingURL, callback) {
+        _sendRequest(pingURL, callback);
+    }
+
     generate_news_score(){
         let subPack = this.create_sepsis_sub_pack();
 
@@ -72,10 +76,10 @@ class BluPandaAPI
         // });
     }
 
-    _sendRequest(type, callback){
-        const api_url = '${base_url}/${api_key}/${type}';
+    _sendRequest(requestURL, callback){
+        //const api_url = '${base_url}/${api_key}/${type}';
 
-        request(api_url, function(error, response, body){
+        request(requestURL, function(error, response, body){
             if (!error & response.statusCode === 200){
                 callback(JSON.parse(body).results)
             }
