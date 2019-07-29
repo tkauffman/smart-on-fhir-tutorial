@@ -13,7 +13,7 @@ class BluPandaAPI
     is_panda_API_available(pingURL) {
         request(pingURL, function(error, response, body){
             if (!error & response.statusCode === 200){
-                //callback(JSON.parse(body).results)
+                callback(JSON.parse(body).results)
                 return true;
             }
             else {
