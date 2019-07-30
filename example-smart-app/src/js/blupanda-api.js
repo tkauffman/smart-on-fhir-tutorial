@@ -32,23 +32,26 @@ class BluPandaAPI
     }
 
     generate_news_score(){
-        const api_url = `${rootURL}/${apiKey}/SEPSISSCORE`;
+        var api_url = `${this.panda_api_url}/${this.api_key}/SEPSISSCORE`;
 
         let subPack = this.create_sepsis_sub_pack();
 
-        var data = JSON.stringify({"SUBTYPE": subPack.SUBTYPE, "PVID": subPack.PVID});
+        console.log('Sending SubPack for score')
 
-        console.log(data)
-
-        // var xhr = new XMLHttpRequest();
-        // xhr.responseType = 'json';
-        // xhr.open('POST', "https://irmcv4.blupanda.com/PandaAPI.svc/API/PING", true);
-        // xhr.onreadystatechange = function(){
-        //     if (xhr.readyState == XMLHttpRequest.DONE){
-        //         console.log(xhr.response)
-        //     }
-        // }
-        // xhr.send();
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', api_url, true);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.withCredentials = true;
+        xhr.responseType = 'json';
+        xhr.onreadystatechange = function(){
+            if (xhr.readyState == XMLHttpRequest.DONE){
+                console.log(xhr.response)
+            }
+            else {
+                console.log('An error occurred')
+            }
+        }
+        xhr.send(subPack);
 
         return subPack;
         // https://irmcv4.blupanda.com/PandaAPI.svc/API/d57a553b4bfd8a18b8d1afbaaed5bf56d26b684c0c5d205c8138609d5c9e51a6/SEPSISSCORE

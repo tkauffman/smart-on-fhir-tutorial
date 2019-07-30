@@ -167,6 +167,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
     <script>
+      function successCallback(result) {
+        console.log("Success: " + result);
+      }
+
+      function failureCallback(error) {
+        console.log("Error: " + error);
+      }
+
       extractData().then(
         //Display Patient Demographics and Observations if extractData was success
         function(p) {
@@ -175,7 +183,19 @@
 
           var bpAPI = new BluPandaAPI('d57a553b4bfd8a18b8d1afbaaed5bf56d26b684c0c5d205c8138609d5c9e51a6');
 
-          var avail = bpAPI.is_panda_API_available();
+          //const promise2 = bpAPI.is_panda_API_available().then(successCallback, failureCallback);
+
+          var postResult = bpAPI.generate_news_score();
+          // var promise = new Promise(function(resolve, reject) {
+          //   // do a thing, possibly async, then…
+
+          //   if (/* everything turned out fine */) {
+          //     resolve("Stuff worked!");
+          //   }
+          //   else {
+          //     reject(Error("It broke"));
+          //   }
+          // });
 
           console.log('Is BluPandaAPI available? ' + (avail));
 
