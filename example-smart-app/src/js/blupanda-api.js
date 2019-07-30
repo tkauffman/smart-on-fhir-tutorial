@@ -41,7 +41,7 @@ class BluPandaAPI
         var xhr = new XMLHttpRequest();
         xhr.open('POST', api_url, true);
         xhr.setRequestHeader("Content-Type", "application/json");
-        //xhr.withCredentials = true;
+        xhr.withCredentials = true;
         xhr.responseType = 'json';
         xhr.onreadystatechange = function(){
             if (xhr.readyState == XMLHttpRequest.DONE){
