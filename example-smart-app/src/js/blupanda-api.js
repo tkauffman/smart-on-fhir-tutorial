@@ -6,7 +6,7 @@ class BluPandaAPI
 {
     constructor(api_key){
         //this.http = http;
-        this.panda_api_url = 'https://irmcv4.blupanda.com/PandaAPI.svc/API/'
+        this.panda_api_url = 'https://irmcv4.blupanda.com/PandaAPI.svc/API'
         this.api_key = api_key;
     }
 
