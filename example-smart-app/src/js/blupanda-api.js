@@ -49,7 +49,7 @@ class BluPandaAPI
             }
             else {
                 console.log('An error occurred');
-                console.log(xhr.responseText);
+                console.log(JSON.parse(xhr.responseText));
                 console.log(xhr.status);
             }
         }
