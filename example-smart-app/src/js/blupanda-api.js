@@ -45,11 +45,11 @@ class BluPandaAPI
         xhr.responseType = 'json';
         xhr.onreadystatechange = function(){
             if (xhr.readyState == XMLHttpRequest.DONE){
-                console.log(xhr.response);
+                console.log(xhr.status);
             }
             else {
                 console.log('An error occurred');
-                console.log(xhr).response;
+                console.log(xhr.response)
                 console.log(xhr.status);
             }
         }
